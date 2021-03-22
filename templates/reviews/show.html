@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page-content">
+    <br>
+    <p><b>Title:</b> {{review.title}}</p>
+    <p><b>Content:</b> {{review.content}}</p>
+    <p><b>Attraction:</b> {{review.attraction.name}}</p>
+    {% if review.attraction.entry_fee == True %}
+        <p><b>Entry Fee:</b> Yes</p>
+    {% else %}
+        <p><b>Entry Fee:</b> No</p>
+    {% endif %}
+    <br>
+    <br>
+</div>
+
+
+
+{% endblock %}

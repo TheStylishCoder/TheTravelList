@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-content">
+    <h3>Edit {{review.title}}</h3>
+    <p>Please complete the form to update this entry.</p>
+
+
+    <form class="form" action="/reviews/{{review.id}}" method="post">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <input class="input-field" type="text" id="title" value="{{review.title}}" name="title" required>
+        </div>
+        <div class="input-container">
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" value="{{review.content}}" placeholder="{{review.content}}" cols="30" rows="50"></textarea>
+        </div>
+        <div class="input-container">
+            <label for='attraction'>Attraction:</label>
+            <select name='attraction_id' id='attraction'>
+                {% for attraction in attractions %}
+                    <option value="{{attraction.id}}" {% if review.attraction.id == attraction.id %} selected="selected" {% endif %}>{{attraction.name}}</option>
+                {% endfor %}
+            </select>    
+        </div>
+        <br>
+    
+        <button class="button" type="submit">Edit Entry</button>
+    </form>
+</div>
+
+{% endblock %}

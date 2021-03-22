@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p class="welcome">Start planning your next adventure!</p>
+
+<div class="container">
+    <div class="home-image">
+        <div class="thumb">
+            <img src="/static/images/countries.JPG" alt="View of the alps from a plane" style="width:200px;height:200px;">
+        </div>
+        <div class="content">
+            <p><a href="/countries">Countries</a></p>
+        </div>
+    </div>
+    <div class="home-image">
+        <div class="thumb">
+            <img src="/static/images/cities.JPG" alt="Image of Venice" style="width:200px;height:200px;">
+        </div>
+        <div class="content">
+            <p><a href="/cities">Cities</a></p>
+        </div>
+    </div>
+    <div class="home-image">
+        <div class="thumb">
+            <img src="/static/images/attraction.JPG" alt="Image of Trevi Fountain in Rome" style="width:200px;height:200px;">
+        </div>
+        <div class="content">
+            <p><a href="/attractions">Things To Do</a></p>
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="search-links">
+    <p>Know what you're looking for? Click on one of the following search links.</p>
+    <nav>
+        <ul>
+            <li><a href="/countries/search">Search for a country</a></li>
+            <li><a href="/cities/search">Search for a city</a></li>
+            <li><a href="/attractions/search">Search for things to do by category</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+
+  <div class="hdr-container">
+    <h1>Cities</h1>
+    <a href="/cities/new"><button class="button">Add City</button></a>
+  </div>
+  <div class="img-container">
+    <img src="/static/images/City1.PNG" alt="An image New York from the Brooklyn Bridge" style="width:250px;height:250px">
+    <img src="/static/images/City2.PNG" alt="An image of an Italian cathedral" style="width:250px;height:250px">
+    <img src="/static/images/CITY3.PNG" alt="An image of a man riding a bike over a canal in Amsterdam" style="width:250px;height:250px">
+  </div>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Visited</th>
+        <th>Wishlist</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for city in cities %}
+      <tr>
+        <td><a href="/cities/{{city.id}}"> {{city.name}}</a></td>
+        <td>{{city.country.name}}</td>
+        {% if city.visited == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
+        {% if city.wishlist == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
+        <td><a href="cities/{{city.id}}/edit"><button class="button">Edit</button></a></td>
+        <td><form action="/cities/{{city.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

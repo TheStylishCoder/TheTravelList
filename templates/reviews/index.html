@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+  <br>
+  <br>
+  <div class="grid-container">
+    <div class="item1">
+      <img src="/static/images/Profile.PNG" alt="A profile picture example" style="width:auto;height:300px">
+    </div>
+    <div class="item2">
+      <br>
+      <br>
+      <a href="/review/visited">Places I've Been</a>
+      <br>
+      <br>
+      <a href="/review/wishlist">Places on My Wishlist</a>
+    </div>
+    <div class="item3">
+      <img src="/static/images/Fernweh.PNG" alt="Fernweh dictionary description" style="width:auto;height:250px">
+    </div>
+    <div class="item4">
+      <h1>Reviews & Notes</h1>
+      <a href="/reviews/new"><button class="button">Add Entry</button></a>
+      <br>
+      <hr>
+      <br>
+      {% for review in reviews %}
+      <a href="/reviews/{{review.id}}"> {{review.title}}</a>
+      <p>{{review.content}}</p>
+      <p>{{review.attraction.name}}</p>
+      <div class="button-container">
+        <a href="reviews/{{review.id}}/edit"><button class="button-journal">Edit</button></a>
+        <form action="/review/{{review.id}}/delete" method="POST"><button class="button-journal">Delete</button></form>
+      </div>
+      <br>
+      <br>
+      <br>
+      {% endfor %}
+    </div>
+    <div class="item5">
+      <img src="/static/images/Cat.PNG" alt="An image of a cat sleeping" style="width:250px;height:250px">
+    </div>
+    <div class="item6">
+      <img src="/static/images/Gucci.PNG" alt="An image of Gucci outfits on mannequins" style="width:250px;height:250px">
+    </div>
+    <div class="item7">
+      <img src="/static/images/Stroopwafels.PNG" alt="An image of Dutch Stroopwafels" style="width:250px;height:250px">
+    </div>
+  </div>
+
+
+  
+</div>
+{% endblock %}

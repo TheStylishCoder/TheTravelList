@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+
+  <div class="hdr-container">
+    <h1>Sights & Attractions</h1>
+    <a href="/attractions/new"><button class="button">Add</button></a>
+  </div>
+  <div class="img-container">
+    <img src="/static/images/Attraction1.PNG" alt="An image of Kew Gardens inside a glasshouse" style="width:250px;height:auto">
+    <img src="/static/images/Attraction2.PNG" alt="An image of a Dior outfit on a mannequin" style="width:250px;height:auto">
+    <img src="/static/images/Attraction3.PNG" alt="An image of gondolas in Venice" style="width:250px;height:334px">
+  </div>
+  <div class="free">
+    <a href="/attractions/free"><button class="button">Attractions With No Entry Fee</button></a>
+  </div>
+    <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>Entry Fee</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attraction in attractions %}
+      <tr>
+        <td><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
+        <td>{{attraction.category}}</td>
+        <td>{{attraction.city.name}}</td>
+        {% if attraction.entry_fee == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
+        <td><a href="attractions/{{attraction.id}}/edit"><button class="button">Edit</button></a></td>
+        <td><form action="/attraction/{{attraction.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

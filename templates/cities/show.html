@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+    <h3> Things To Do In {{city.name}} </h2>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Entry Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attraction in attractions %}
+            <tr>
+                <td><a class="link" href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
+                <td>{{ attraction.category }}</td>
+                {% if attraction.entry_fee == True %}
+                    <td><p>Yes</p></td>
+                {% else %}
+                    <td><p>No</p></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

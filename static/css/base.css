@@ -1,0 +1,55 @@
+body {
+    margin: 0% ;
+    font-family: 'Nunito', sans-serif;
+}
+
+.page-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.bg-img {
+    background-image: url("/static/images/Header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 230px;
+}
+
+.menu-container {
+    text-align: right;
+    
+}
+
+.menu-container a {
+    display: inline-flex;
+    font-size: 18px;
+    color: oldlace;
+    padding: 70px 30px;
+    text-decoration: none;
+}
+
+.bar {
+    background-color: rgb(62, 111, 202);
+    padding: 10px;
+    text-align: center;
+}
+
+.bar a {
+    color: oldlace;
+    font-size: 18px;
+    text-decoration: none;
+    padding-left: 30px;
+    margin-left: 30px;
+    
+}
+
+body > footer {
+    background-color: rgb(62, 111, 202);
+    padding: 50px;
+}
+
+body > footer > p {
+    text-align: center;
+    color: oldlace;
+}

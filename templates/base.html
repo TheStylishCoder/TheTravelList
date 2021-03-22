@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Travel List</title>
+
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/table.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+    <link rel="stylesheet" href="/static/css/grid.css">
+    <link rel="stylesheet" href="/static/css/headers.css">
+    <link rel="stylesheet" href="/static/css/tablet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="bg-img">
+            <div class="menu-container">
+                <a href="/countries">Countries</a>
+                <a href="/cities">Cities</a>
+                <a href="/attractions">Things To Do</a>
+            </div>
+        </div>
+        <div class="bar">
+            <a href="/">Home</a>
+            <a href="/reviews">My Travel Journal</a>
+        </div>
+        
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© The Travel List</p>
+    </footer>
+    
+</body>
+</html>
