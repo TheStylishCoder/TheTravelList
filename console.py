@@ -43,12 +43,7 @@ country_repository.save(country13)
 country14 = Country("India", False, True)
 country_repository.save(country14)
 
-# res = country_repository.select_all()
-# for country in res:
-#     print(country.__dict__)
 
-# country1.visited = False
-# country_repository.update(country1)
 
 city1 = City("Tokyo",country1, False, True)
 city_repository.save(city1)
@@ -115,12 +110,7 @@ city_repository.save(city24)
 city25 = City("Mumbai", country14)
 city_repository.save(city25)
 
-# res = city_repository.select_all()
-# for city in res:
-#     print(city.__dict__)
 
-# city10.name = "Edinburgh"
-# city_repository.update(city10)
 
 attraction1 = Attraction("Sensoji Temple", "Place of Worship", city1)
 attraction_repository.save(attraction1)
@@ -247,25 +237,6 @@ attraction_repository.save(attraction49)
 attraction50 = Attraction("Elephanta Caves", "Historic Site", city25)
 attraction_repository.save(attraction50)
 
-# res = attraction_repository.select_all()
-# for attraction in res:
-#     print(attraction.__dict__)
 
-# attraction18.name = "V&A"
-# attraction_repository.update(attraction18)
-
-review1 = Review("Turtles", "Had a lovely time at this park and the best part was seeing the terrapins that live in the pond. It was great weather for October!", attraction12)
-review_repository.save(review1)
-review2 = Review("Kelvingrove", "Great park in the grounds of the museum. Found a fantastic pizza place across from the museum!", attraction19)
-review_repository.save(review2)
-review3 = Review("Dutch Pancakes", "There was so much to see in the Rijksmuseum but one of the best parts of the day was our breakfast from The Happy Pig!", attraction21)
-review_repository.save(review3)
-
-# res = review_repository.select_all()
-# for review in res:
-#     print(review.__dict__)
-
-review1.title = "El Retiro"
-review_repository.update(review1)
 
 pdb.set_trace()
