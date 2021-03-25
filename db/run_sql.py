@@ -1,6 +1,6 @@
 import psycopg2
 import psycopg2.extras as ext
-import url from ..assets.url
+from assets.url import url
 
 
 def run_sql(sql, values = None):
